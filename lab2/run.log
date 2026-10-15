@@ -1,0 +1,11 @@
+Output filename for child1: Output filename for child2: Parent PID: 24580
+Child1 PID: 21788
+Child2 PID: 28036
+Enter text lines. Finish with Ctrl+Z then Enter (EOF).
+Line 1: 5 characters -> child1
+Line 2: 10 characters -> child1
+Line 3: 11 characters -> child2
+Line 4: 17 characters -> child2
+Line 5: 10 characters -> child1
+Line 6: 10 characters -> child1
+Line 7: 11 characters -> child2

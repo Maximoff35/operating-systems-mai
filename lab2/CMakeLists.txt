@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.16)
+project(os_lab2_variant17 C)
+if(NOT WIN32)
+    message(FATAL_ERROR "This project targets Windows / Win32 API")
+endif()
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+add_executable(parent src/parent.c src/common.c)
+add_executable(child1 src/child.c src/common.c)
+add_executable(child2 src/child.c src/common.c)
+foreach(target parent child1 child2)
+    if(MSVC)
+        target_compile_options(${target} PRIVATE /W4)
+    else()
+        target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic)
+    endif()
+    set_target_properties(${target} PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+        RUNTIME_OUTPUT_DIRECTORY_DEBUG "${CMAKE_BINARY_DIR}"
+        RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}")
+endforeach()
