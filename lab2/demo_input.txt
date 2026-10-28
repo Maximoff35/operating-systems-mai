@@ -1,9 +1,0 @@
-short.txt
-long.txt
-Hello
-abcdefghij
-abcdefghijk
-Operating systems
-AEIOUaeiou
-1234567890
-12345678901
